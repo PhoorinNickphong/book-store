@@ -4,4 +4,5 @@ const repositories = {
     categories: new CategoryRepository()
 }
 
+
 export default repositories
