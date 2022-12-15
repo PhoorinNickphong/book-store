@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Repo from './repositories'
+import Category from './models/Category';
+import { useEffect, useState } from 'react'
 
 function App() {
+  const [categoryList, setCategoryList] = useState<Category[]>([])
+
+  const fetchCategoryList = async () => {
+    const result = await Repo.categories.getAll()
+    if (result) {
+      setCategoryList(result)
+    }
+  }
+
+  useEffect(() => {
+    fetchCategoryList()
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <div>
+    {categoryList.map(category => <p key=
+    {category.id}> ID : {category.id} Title : 
+    {category.title}</p>)}
+  </div>
+
+  )
 }
 
 export default App;
