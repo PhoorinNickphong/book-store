@@ -36,12 +36,14 @@ router
       return
     }
     ctx.body = await findById(id).first()
+    
   })
   .del('/:id', async (ctx, next) => {
     const id = parseInt(ctx.params.id)
     const rowUpdated = await findById(id).del()
     ctx.body = {statusCode: rowUpdated > 0 ? 1 : 0}
   })
+
 
 
 export default router

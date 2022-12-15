@@ -3,7 +3,7 @@ import appConfig from './config'
 const knexStringcase = require('knex-stringcase')
 
 const db = knex(knexStringcase({
-    client:'mysql',
+    client:'mysql2',
     connection: appConfig.dbConnectionInfo,
     useNullAsDefault: true,
 }))

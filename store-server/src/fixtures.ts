@@ -12,3 +12,5 @@ async function loadFixtures(clearData = false){
     { id: 2, title: 'Computer' },
   ])
 }
+
+export default loadFixtures
