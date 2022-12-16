@@ -5,7 +5,6 @@ import Category from './models/Category';
 import Repo from './repositories'
 
 
-
 function App(){ 
   const [categoryList, setCategoryList] = useState<Category[]>([])
   const [bookList, setBookList] = useState<Book[]>([])
