@@ -5,7 +5,6 @@ async function loadFixtures(clearData = false){
     console.warn('clearing data')
     await db('book').del()
     await db('category').del()
-    await db('book').del()
   }
 
   await db.batchInsert('category', [
